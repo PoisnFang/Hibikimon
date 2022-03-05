@@ -1,0 +1,15 @@
+<div class="section">
+  <div class="box">
+    <input type="text" value.bindpath="$.pkmn_name"/>
+    <button class="button" click.handler="@pkmn = callhandler(@url = $.pkmn_url + $.pkmn_name, @method='GET');
+            $.pkmn_img = @pkmn.sprites.front_default;">Get Pokemon</button>
+  </div>
+  <div class="box">
+    Image: {{ $.pkmn_img }}
+    <span if="$.pkmn_img">| <a download="img.jpg" href="*$.pkmn_img">Download</a></span>
+    <br />
+    <img if="$.pkmn_img" style="width: 300px" src="*$.pkmn_img" />
+  </div>
+</div>
+
+
